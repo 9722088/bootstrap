@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/parsley.js/2.7.2/parsley.min.js"></script>
+<script src="parsley_zh_cn.js"></script>
+<script src="index.js"></script>
+<style>
+.navbar-default{
+    background-color: #000;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+.end-box {
+    padding: 20px;
+    color: #fff;
+    background-color: #000;
+    font-size: 14px;
+}
+.list-group-item div{
+  padding-top: 10px;
+  display:none
+}
+input.parsley-error, select.parsley-error, textarea.parsley-error {
+    background: #FAEDEC;
+    border: 1px solid #E85445;
+}
+ul.parsley-errors-list {
+    list-style: none;
+    color: #E74C3C;
+    padding-left: 0;
+}
+</style>
+$(document).ready(function(){
+    $('#btnSave').on('click',function(){
+       var check = $('#form1').parsley().validate();
+        if(check){
+           alert('验证通过.')
+    }
+});
+</head>
+
+<body >
+  <!-- 使用bootstrap的导航条-->
+		<nav class="navbar navbar-default" role="navigation">
+				 <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-admin">
+            <span class="sr-only">切换菜单</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">电子商店</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-admin">
+          <form class="navbar-form navbar-left hidden-xs hidden-ms">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入商品名称...">
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-primary">
+                  搜索
+                </button>
+              </div>
+          </form>
+          <ul class="nav navbar-nav">
+            <li><a href="#">商 品</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#register-modal">注 册</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#login-modal">登 录</a></li>
+          </ul>
+          <form class="navbar-form hidden-md hidden-lg">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入商品名称...">
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-primary">
+                  搜索
+                </button>
+              </div>
+          </form>
+        </div>
+      </div>
+		</nav>
+  <!-- TODO -->
+  
+  <!-- 使用row col 进行页面布局，使用 list group 进行分类布局，使用thumbnail进行商品布局-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-primary">
+							<div class="panel-heading">
+            <h4>
+              电子商城
+            </h4>
+         	</div>
+					   <ul class="list-group">
+								 <li class="list-group-item" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">手机<label class="label 														label-primary" style="float: right">234</label></li>
+            <div id="collapseOne" class="panel-collapse collapse out">
+            		<div class="panel-body">
+                		小米 华为 Iphone oppo
+            		</div>
+        			 </div>
+								 <li class="list-group-item">笔记本<label class="label label-success" style="float: right">34</label></li>
+								 <li class="list-group-item">平板<label class="label label-danger" style="float: right">4</label></li>
+								 <li class="list-group-item">显示器<label class="label label-info" style="float: right">434</label></li>
+								 <li class="list-group-item">游戏机<label class="label label-success" style="float: right">34</label></li>
+							</ul>
+					 </div>
+       	<div class="panel panel-success">
+          <div class="panel-heading">
+            <h4>
+              智能数码
+            </h4>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">手环<label class="label label-danger" style="float: right">300</label></li>
+            <li class="list-group-item">手表<label class="label label-success" style="float: right">340</label></li>
+            <li class="list-group-item">VR眼睛<label class="label label-info" style="float: right">735</label></li>
+          </ul>
+        </div>
+      		<div class="panel panel-primary">
+        		<div class="panel-heading">
+          		<h4>
+            		手机配件
+          		</h4>
+        		</div>
+        		<ul class="list-group">
+          		<li class="list-group-item">耳机<label class="label label-warning" style="float: right">456</label></li>
+          		<li class="list-group-item">移动电源<label class="label label-success" style="float: right">156</label></li>
+          		<li class="list-group-item">手机壳<label class="label label-info" style="float: right">400</label></li>
+          		<li class="list-group-item">数据线<label class="label label-primary" style="float: right">89</label></li>
+          		<li class="list-group-item">手机支架<label class="label label-danger" style="float: right">90</label></li>
+          		<li class="list-group-item">手机贴膜<label class="label label-warning" style="float: right">567</label></li>
+        		</ul>
+      		</div>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12">
+            <ol class="breadcrumb">
+              <li><a href="#">首页</a></li>
+              <li>手机</li>
+            </ol>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="thumbnail">
+              <img src="http://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg">
+              <div class="caption">
+                <h3>
+                  <a href="#">OPPO</a>
+                </h3>
+                <p class="text-danger">
+                  <strong>1559</strong>
+                </p>
+                <p>
+                  <a href="#">OPPO A57 3GB+32GB内存<br>版</a>
+                </p>
+                <p>
+                  黑色 全网通4GB手机 双卡双待
+                </p>
+                <p>
+                  <a href="#" class="btn btn-success">立即购买</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="thumbnail">
+              <img src="http://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg">
+              <div class="caption">
+                <h3>
+                  <a href="#">荣耀</a>
+                </h3>
+                <p class="text-danger">
+                  <strong>1598</strong>
+                </p>
+                <p>
+                  <a href="#">荣耀8 3GB+32GB<br>  </a>
+                </p>
+                <p>
+                  全网通版 珠光白
+                </p>
+                <p>
+                  <a href="#" class="btn btn-success">立即购买</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="thumbnail">
+              <img src="http://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg">
+              <div class="caption">
+                <h3>
+                  <a href="#">iPhone 7</a>
+                </h3>
+                <p class="text-danger">
+                  <strong>6388</strong>
+                </p>
+                <p>
+                  <a href="#">Apple iPhone 7 Plus(A1661)<br>128G</a>
+                </p>
+                <p>
+                  金色 移动联通电信4G手机
+                </p>
+                <p>
+                  <a href="#" class="btn btn-success">立即购买</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ol class="breadcrumb">
+              <li><a href="#">首页</a></li>
+              <li>笔记本</li>
+            </ol>
+          </div>
+        </div>
+                <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="thumbnail">
+              <img src="http://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg">
+              <div class="caption">
+                <h3>
+                  <a href="#">MacBook Air</a>
+                </h3>
+                <p class="text-danger">
+                  <strong>5988</strong>
+                </p>
+                <p>
+                  <a href="#">Apple MacBook Air 13.3英寸<br>笔记本电脑</a>
+                </p>
+                <p>
+                  英寸笔记本电脑
+                </p>
+                <p>
+                  <a href="#" class="btn btn-success">立即购买</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="thumbnail">
+              <img src="http://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg">
+              <div class="caption">
+                <h3>
+                  <a href="#">戴尔DELL灵越</a>
+                </h3>
+                <p class="text-danger">
+                  <strong>4199</strong>
+                </p>
+                <p>
+                  <a href="#">戴尔DELL灵越5565-R2945A<br>15.6英寸笔记本电脑</a>
+                </p>
+                <p>
+                  黑色 全网通4GB手机 双卡双待
+                </p>
+                <p>
+                  <a href="#" class="btn btn-success">立即购买</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="thumbnail">
+              <img src="http://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg">
+              <div class="caption">
+                <h3>
+                  <a href="#">联想(Lenovo)拯救者</a>
+                </h3>
+                <p class="text-danger">
+                  <strong>6559</strong>
+                </p>
+                <p>
+                  <a href="#">联想(Lenovo)拯救者<br>  </a>
+                </p>
+                <p>
+                  R720 15.6英寸游戏
+                </p>
+                <p>
+                  <a href="#" class="btn btn-success">立即购买</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TODO -->
+ 
+  <!-- 脚注栏-->
+  <div class="end-box" style="text-align: center">
+    ©2017| Email:Info@Itbegin.com
+  </div>
+  <!-- TODO -->
+  
+  <!-- 使用modal对话框实现登录框布局-->
+	 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" active="#" method="post" style="display:none;">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h6>
+             登录
+           </h6>
+         </div>
+         <div class="modal-body">
+           <form class="form-horizontal">
+             <div class="form-group">
+               <label class="col-md-3 control-label">用户名: <span class="required">*</span></label>
+               <div class="col-md-8">
+                 <input type="text" class="form-control">
+               </div>
+             </div>
+             <div class="form-group">
+               <label class="col-md-3 control-label">密码: <span class="required">*</span></label>
+               <div class="col-md-8">
+                 <input tyoe="password" class="form-control">
+               </div>
+             </div>
+           </form>
+         </div>
+         <div class="modal-footer">
+           <div style="text-align: center">
+             <button type="button" class="btn btn-default">
+               取消
+             </button>
+             <button type="button" class="btn btn-primary">
+               登录
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
+  </div>
+  <!-- TODO -->
+  
+  <!-- 使用modal对话框实现注册框布局，使用parsley进行前端验证　-->
+	 <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" active="#" method="post" style="display:none;">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h6>
+             注册
+           </h6>
+         </div>
+         <div class="modal-body">
+           <form id="form1" data-prasley-validate class="form-horizontal" action="#" method="post">
+             <div class="form-group">
+               <label class="col-md-3 control-label">用户名:<span class="required">*</span></label>
+               <div class="col-md-8">
+                 <input type="text" id="register-code" name="register-code" class="form-control" data-parsley-																				required="true">
+               </div>
+             </div>
+             <div class="form-group">
+               <label class="col-md-3 control-label">密码:<span class="required">*</span></label>
+               <div class="col-md-8">
+                 <input type="password" id="register-pwd" name="register-pwd" class="form-control" data-parsley-																			required="true">
+               </div>
+             </div>
+             <div class="form-group">
+               <label class="col-md-3 control-label">确认密码:<span class="required">*</span></label>
+               <div class="col-md-8">
+                 <input type="password" class="form-control" id="register-repwd" name="register-repwd" data-parsley-																	equalto="#register-pwd" data-parsley-required="true">
+               </div>
+             </div>
+             <div class="form-group">
+               <label class="col-md-3 control-label">Email:<span class="required">*</span></label>
+               <div class="col-md-8">
+                 <input type="email" id="register-email" name="register-email" class="form-control" data-parsley-																			required="true">
+               </div>
+             </div>
+           </form> 
+         </div>
+         <div class="modal-footer">
+           <div style="text-align: center">
+             <button type="button" class="btn btn-default">
+               取消
+             </button>
+             <button typr="button" class="btn btn-primary" id="btnSave">
+               注册
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
+  </div>
+  <!-- TODO -->
+</body>
+</html>
